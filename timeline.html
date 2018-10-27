@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水平timeline</title>
+    <style>
+        .time-line {
+            list-style: none;
+            margin: 0;
+            position: relative;
+            top: -18px;
+        }
+        .list-content {
+            display: flex;
+            font-size: 12px;
+            padding: 12px 10px 12px 0;
+            margin-left: 10px;
+            position: relative;
+            bottom: -18px;
+        }
+
+        .timeline-stone {
+            width: 80px;
+            height: 5px;
+            float: left;
+            border-bottom: #DDDDDD 4px solid;
+            position: relative;
+            top: 20px;
+            font-weight: 200;
+            color: #666;
+        }
+        .timeline-stone::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: -3px;
+            z-index: 10;
+        }
+
+        .timeline-stone:first-child {
+            width: 0;
+            border-left: transparent 1px solid;
+        }
+
+        .timeline-stone::before {
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border: 1px solid #DDDDDD;
+            right: -6px;
+            bottom: -10px;
+        }
+
+        .timeline-stone::after {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: #DDDDDD;
+            right: -1px;
+            bottom: -5px;
+            z-index: 20;
+        }
+
+        .is-completed {
+            border-bottom: #01CA9D 4px solid;
+        }
+
+
+        .is-completed::before {
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border: 1px solid #01CA9D;
+            right: -6px;
+            bottom: -10px;
+        }
+
+        .is-completed::after {
+            content: '';
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: #01CA9D;
+            right: -1px;
+            bottom: -5px;
+        }
+    </style>
+</head>
+<body>
+    <ul class='time-line'>
+        <li class='timeline-stone is-completed'></li>
+        <li class='timeline-stone is-completed'></li>
+        <li class='timeline-stone'></li>
+        <li class='timeline-stone'></li>
+    </ul>
+</body>
+</html>
